@@ -28,15 +28,15 @@ dataLinks:
   - name: udp-in
     class: org.yamcs.tctm.UdpTmDataLink
     stream: tm_realtime
-    port: 10015
-    packetPreprocessorClassName: com.example.myproject.MyPacketPreprocessor
+    port: 5013
+    packetPreprocessorClassName: com.example.nos3.MyPacketPreprocessor
 
   - name: udp-out
     class: org.yamcs.tctm.UdpTcDataLink
     stream: tc_realtime
-    host: localhost
-    port: 10025
-    commandPostprocessorClassName: com.example.myproject.MyCommandPostprocessor
+    host: nos_fsw
+    port: 5012
+    commandPostprocessorClassName: com.example.nos3.MyCommandPostprocessor
 
 mdb:
   # Configuration of the active loaders
