@@ -8,7 +8,7 @@
 					<Member name="Type" typeRef="CCSDS_Type_Type" />
 					<Member name="SecHdrFlag" typeRef="CCSDS_Sec_Hdr_Flag_Type" />
 					<Member name="APID" typeRef="CCSDS_APID_Type" />
-				</MemberList>
+				</MemberList> 
 			</AggregateParameterType>
 			<IntegerParameterType name="CCSDS_Version_Type" signed="false">
 				<UnitSet />
@@ -85,6 +85,331 @@
 					<Enumeration value="7" label="ENUM_VALUE_7" />
 				</EnumerationList>
 			</EnumeratedParameterType>
+
+			<!-- CFE-ES Telemetry Definitions -->
+			<IntegerParameterType name="CCSDS_STREAMID_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="16" />
+                <Description>CCSDS Packet Identification</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="CCSDS_SEQUENCE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="16" />
+                <Description>CCSDS Packet Sequence Control</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="CCSDS_LENGTH_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="16" />
+                <Description>CCSDS Packet Data Length</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="CCSDS_SECONDS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>CCSDS Telemetry Secondary Header (seconds)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="CCSDS_SUBSECS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="16" />
+                <Description>CCSDS Telemetry Secondary Header (subseconds)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="CCSDS_SPARE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+            </IntegerParameterType>
+            <IntegerParameterType name="CMDCOUNTER_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>The ES Application Command Counter.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="ERRCOUNTER_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>The ES Application Command Error Counter.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="CFECORECHECKSUM_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="16" />
+                <Description>Checksum of cFE Core Code.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="CFEMAJORVERSION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>Major Version Number of cFE.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="CFEMINORVERSION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>Minor Version Number of cFE.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="CFEREVISION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>Sub-Minor Version Number of cFE.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="CFEMISSIONREVISION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>Mission Version Number of cFE.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="OSALMAJORVERSION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>OS Abstraction Layer Major Version Number.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="OSALMINORVERSION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>OS Abstraction Layer Minor Version Number.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="OSALREVISION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>OS Abstraction Layer Revision Number.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="OSALMISSIONREVISION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>OS Abstraction Layer MissionRevision Number.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="PSP_MAJORVERSION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>Platform Support Package Major Version Number.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="PSP_MINORVERSION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>Platform Support Package Minor Version Number.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="PSP_REVISION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>Platform Support Package Revision Number.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="PSP_MISSIONREVISION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="8" />
+                <Description>Platform Support Package MissionRevision Number.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="SYSLOGBYTESUSED_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Total number of bytes used in system log.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="SYSLOGSIZE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Total size of the system log.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="SYSLOGENTRIES_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of entries in the system log.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="SYSLOGMODE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Write/Overwrite Mode.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="ERLOGINDEX_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Current index of the ER Log (wraps around).</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="ERLOGENTRIES_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of entries made in the ER Log since the power on.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="REGISTEREDCOREAPPS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of Applications registered with ES.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="REGISTEREDEXTERNALAPPS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of Applications registered with ES.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="REGISTEREDTASKS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of Tasks ( main AND child tasks ) registered with ES.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="REGISTEREDLIBS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of Libraries registered with ES.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="RESETTYPE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Reset type ( PROCESSOR or POWERON ).</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="RESETSUBTYPE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Reset Sub Type.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="PROCESSORRESETS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of processor resets since last power on.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="MAXPROCESSORRESETS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Max processor resets before a power on is done.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="BOOTSOURCE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Boot source ( as provided from BSP ).</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="PERFSTATE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Current state of Performance Analyzer.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="PERFMODE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Current mode of Performance Analyzer.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="PERFTRIGGERCOUNT_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of Times Perfomance Analyzer has Triggered.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="PERFDATASTART_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Identifies First Stored Entry in Performance Analyzer Log.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="PERFDATAEND_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Identifies Last Stored Entry in Performance Analyzer Log.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="PERFDATACOUNT_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of Entries Put Into the Performance Analyzer Log.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="PERFDATATOWRITE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of Performance Analyzer Log Entries Left to be Written to Log Dump File.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="HEAPBYTESFREE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of free bytes remaining in the OS heap.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="HEAPBLOCKSFREE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of free blocks remaining in the OS heap.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="HEAPMAXBLOCKSIZE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of bytes in the largest free block.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_APPID_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Application ID for this Application. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_TYPE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>The type of App: CORE or EXTERNAL. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <StringParameterType name="APPINFO_NAME_Type">
+                <SizeInBits>
+                    <Fixed>
+                        <FixedValue>1280</FixedValue>
+                    </Fixed>
+                    <TerminationChar>00</TerminationChar>
+                </SizeInBits>
+                <Description>The Registered Name of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </StringParameterType>
+            <StringParameterType name="APPINFO_ENTRYPOINT_Type">
+                <SizeInBits>
+                    <Fixed>
+                        <FixedValue>1280</FixedValue>
+                    </Fixed>
+                    <TerminationChar>00</TerminationChar>
+                </SizeInBits>
+                <Description>The Entry Point label for the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </StringParameterType>
+            <StringParameterType name="APPINFO_FILENAME_Type">
+                <SizeInBits>
+                    <Fixed>
+                        <FixedValue>4096</FixedValue>
+                    </Fixed>
+                    <TerminationChar>00</TerminationChar>
+                </SizeInBits>
+                <Description>The Filename of the file containing the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </StringParameterType>
+            <IntegerParameterType name="APPINFO_STACKSIZE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>The Stack Size of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_MODULEID_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>The ID of the Loadable Module for the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_ADDRESSESAREVALID_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Indicates that the Code, Data, and BSS addresses/sizes are valid. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_CODEADDRESS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>The Address of the ApplicatiOUTPUTFILENAMEon Code Segment. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_CODESIZE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>The Code Size of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_DATAADDRESS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>The Address of the Application Data Segment. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_DATASIZE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>The Data Size of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_BSSADDRESS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>The Address of the Application BSS Segment. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_BSSSIZE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>The BSS Size of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_STARTADDRESS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>The Start Address of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_EXCEPTIONACTION_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="16" />
+                <Description>What should occur if Application has an exception (Restart Application OR Restart Processor). (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_PRIORITY_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="16" />
+                <Description>The Priority of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_MAINTASKID_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>The Application's Main Task ID. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="APPINFO_EXECUTIONCOUNTER_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>The Application's Main Task Execution Counter. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <StringParameterType name="APPINFO_MAINTASKNAME_Type">
+                <SizeInBits>
+                    <Fixed>
+                        <FixedValue>1280</FixedValue>
+                    </Fixed>
+                    <TerminationChar>00</TerminationChar>
+                </SizeInBits>
+                <Description>The Application's Main Task ID. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </StringParameterType>
+            <IntegerParameterType name="APPINFO_NUMOFCHILDTASKS_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of Child tasks for an App. (Parent: For more information, see CFE_ES_AppInfo_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="POOLHANDLE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Handle of memory pool whose stats are being telemetered.</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="POOLSTATS_POOLSIZE_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Size of Memory Pool (in bytes). (Parent: For more info, see CFE_ES_MemPoolStats_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="POOLSTATS_NUMBLOCKSREQUESTED_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of times a memory block has been allocated. (Parent: For more info, see CFE_ES_MemPoolStats_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="POOLSTATS_CHECKERRCTR_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of errors detected when freeing a memory block. (Parent: For more info, see CFE_ES_MemPoolStats_t.)</Description>
+            </IntegerParameterType>
+            <IntegerParameterType name="POOLSTATS_NUMFREEBYTES_Type" signed="false">
+                <IntegerDataEncoding sizeInBits="32" />
+                <Description>Number of bytes never allocated to a block. (Parent: For more info, see CFE_ES_MemPoolStats_t.)</Description>
+            </IntegerParameterType>
+
+			<!-- Sample Parameters -->
+			<IntegerParameterType name="DEVICE_COUNTER_Type" signed="false"> <!-- byteOrder="LittleEndian">-->
+				<IntegerDataEncoding sizeInBits="32"/>
+			</IntegerParameterType>
+			<IntegerParameterType name="RAW_SAMPLE_X_Type" signed="false"> <!-- byteOrder="LittleEndian">-->
+				<IntegerDataEncoding sizeInBits="16"/>
+			</IntegerParameterType>
+			<IntegerParameterType name="RAW_SAMPLE_Y_Type" signed="false"> <!-- byteOrder="LittleEndian">-->
+				<IntegerDataEncoding sizeInBits="16"/>
+			</IntegerParameterType>
+			<IntegerParameterType name="RAW_SAMPLE_Z_Type" signed="false"> <!-- byteOrder="LittleEndian">-->
+				<IntegerDataEncoding sizeInBits="16"/>
+			</IntegerParameterType>
+
+			
 		</ParameterTypeSet>
 		<ParameterSet>
 			<Parameter name="CCSDS_Packet_ID" parameterTypeRef="CCSDS_Packet_ID_Type" />
@@ -131,6 +456,87 @@
 			<Parameter name="Enum_Para_1" parameterTypeRef="EnumerationTest" />
 			<Parameter name="Enum_Para_2" parameterTypeRef="EnumerationTest" />
 			<Parameter name="Enum_Para_3" parameterTypeRef="EnumerationTest" />
+
+			<!-- CFE-ES Telemetry Definitions -->
+			<Parameter name="CCSDS_STREAMID" parameterTypeRef="CCSDS_STREAMID_Type" />
+			<Parameter name="CCSDS_SEQUENCE" parameterTypeRef="CCSDS_SEQUENCE_Type" />
+			<Parameter name="CCSDS_LENGTH" parameterTypeRef="CCSDS_LENGTH_Type" />
+			<Parameter name="CCSDS_SECONDS" parameterTypeRef="CCSDS_SECONDS_Type" />
+			<Parameter name="CCSDS_SUBSECS" parameterTypeRef="CCSDS_SUBSECS_Type" />
+			<Parameter name="CCSDS_SPARE" parameterTypeRef="CCSDS_SPARE_Type" />
+			<Parameter name="CMDCOUNTER" parameterTypeRef="CMDCOUNTER_Type" />
+			<Parameter name="ERRCOUNTER" parameterTypeRef="ERRCOUNTER_Type" />
+			<Parameter name="CFECORECHECKSUM" parameterTypeRef="CFECORECHECKSUM_Type" />
+			<Parameter name="CFEMAJORVERSION" parameterTypeRef="CFEMAJORVERSION_Type" />
+			<Parameter name="CFEMINORVERSION" parameterTypeRef="CFEMINORVERSION_Type" />
+			<Parameter name="CFEREVISION" parameterTypeRef="CFEREVISION_Type" />
+			<Parameter name="CFEMISSIONREVISION" parameterTypeRef="CFEMISSIONREVISION_Type" />
+			<Parameter name="OSALMAJORVERSION" parameterTypeRef="OSALMAJORVERSION_Type" />
+			<Parameter name="OSALMINORVERSION" parameterTypeRef="OSALMINORVERSION_Type" />
+			<Parameter name="OSALREVISION" parameterTypeRef="OSALREVISION_Type" />
+			<Parameter name="OSALMISSIONREVISION" parameterTypeRef="OSALMISSIONREVISION_Type" />
+			<Parameter name="PSP_MAJORVERSION" parameterTypeRef="PSP_MAJORVERSION_Type" />
+			<Parameter name="PSP_MINORVERSION" parameterTypeRef="PSP_MINORVERSION_Type" />
+			<Parameter name="PSP_REVISION" parameterTypeRef="PSP_REVISION_Type" />
+			<Parameter name="PSP_MISSIONREVISION" parameterTypeRef="PSP_MISSIONREVISION_Type" />
+			<Parameter name="SYSLOGBYTESUSED" parameterTypeRef="SYSLOGBYTESUSED_Type" />
+			<Parameter name="SYSLOGSIZE" parameterTypeRef="SYSLOGSIZE_Type" />
+			<Parameter name="SYSLOGENTRIES" parameterTypeRef="SYSLOGENTRIES_Type" />
+			<Parameter name="SYSLOGMODE" parameterTypeRef="SYSLOGMODE_Type" />
+			<Parameter name="ERLOGINDEX" parameterTypeRef="ERLOGINDEX_Type" />
+			<Parameter name="ERLOGENTRIES" parameterTypeRef="ERLOGENTRIES_Type" />
+			<Parameter name="REGISTEREDCOREAPPS" parameterTypeRef="REGISTEREDCOREAPPS_Type" />
+			<Parameter name="REGISTEREDEXTERNALAPPS" parameterTypeRef="REGISTEREDEXTERNALAPPS_Type" />
+			<Parameter name="REGISTEREDTASKS" parameterTypeRef="REGISTEREDTASKS_Type" />
+			<Parameter name="REGISTEREDLIBS" parameterTypeRef="REGISTEREDLIBS_Type" />
+			<Parameter name="RESETTYPE" parameterTypeRef="RESETTYPE_Type" />
+			<Parameter name="RESETSUBTYPE" parameterTypeRef="RESETSUBTYPE_Type" />
+			<Parameter name="PROCESSORRESETS" parameterTypeRef="PROCESSORRESETS_Type" />
+			<Parameter name="MAXPROCESSORRESETS" parameterTypeRef="MAXPROCESSORRESETS_Type" />
+			<Parameter name="BOOTSOURCE" parameterTypeRef="BOOTSOURCE_Type" />
+			<Parameter name="PERFSTATE" parameterTypeRef="PERFSTATE_Type" />
+			<Parameter name="PERFMODE" parameterTypeRef="PERFMODE_Type" />
+			<Parameter name="PERFTRIGGERCOUNT" parameterTypeRef="PERFTRIGGERCOUNT_Type" />
+			<Parameter name="PERFDATASTART" parameterTypeRef="PERFDATASTART_Type" />
+			<Parameter name="PERFDATAEND" parameterTypeRef="PERFDATAEND_Type" />
+			<Parameter name="PERFDATACOUNT" parameterTypeRef="PERFDATACOUNT_Type" />
+			<Parameter name="PERFDATATOWRITE" parameterTypeRef="PERFDATATOWRITE_Type" />
+			<Parameter name="HEAPBYTESFREE" parameterTypeRef="HEAPBYTESFREE_Type" />
+			<Parameter name="HEAPBLOCKSFREE" parameterTypeRef="HEAPBLOCKSFREE_Type" />
+			<Parameter name="HEAPMAXBLOCKSIZE" parameterTypeRef="HEAPMAXBLOCKSIZE_Type" />
+			<Parameter name="APPINFO_APPID" parameterTypeRef="APPINFO_APPID_Type" />
+			<Parameter name="APPINFO_TYPE" parameterTypeRef="APPINFO_TYPE_Type" />
+			<Parameter name="APPINFO_NAME" parameterTypeRef="APPINFO_NAME_Type" />
+			<Parameter name="APPINFO_ENTRYPOINT" parameterTypeRef="APPINFO_ENTRYPOINT_Type" />
+			<Parameter name="APPINFO_FILENAME" parameterTypeRef="APPINFO_FILENAME_Type" />
+			<Parameter name="APPINFO_STACKSIZE" parameterTypeRef="APPINFO_STACKSIZE_Type" />
+			<Parameter name="APPINFO_MODULEID" parameterTypeRef="APPINFO_MODULEID_Type" />
+			<Parameter name="APPINFO_ADDRESSESAREVALID" parameterTypeRef="APPINFO_ADDRESSESAREVALID_Type" />
+			<Parameter name="APPINFO_CODEADDRESS" parameterTypeRef="APPINFO_CODEADDRESS_Type" />
+			<Parameter name="APPINFO_CODESIZE" parameterTypeRef="APPINFO_CODESIZE_Type" />
+			<Parameter name="APPINFO_DATAADDRESS" parameterTypeRef="APPINFO_DATAADDRESS_Type" />
+			<Parameter name="APPINFO_DATASIZE" parameterTypeRef="APPINFO_DATASIZE_Type" />
+			<Parameter name="APPINFO_BSSADDRESS" parameterTypeRef="APPINFO_BSSADDRESS_Type" />
+			<Parameter name="APPINFO_BSSSIZE" parameterTypeRef="APPINFO_BSSSIZE_Type" />
+			<Parameter name="APPINFO_STARTADDRESS" parameterTypeRef="APPINFO_STARTADDRESS_Type" />
+			<Parameter name="APPINFO_EXCEPTIONACTION" parameterTypeRef="APPINFO_EXCEPTIONACTION_Type" />
+			<Parameter name="APPINFO_PRIORITY" parameterTypeRef="APPINFO_PRIORITY_Type" />
+			<Parameter name="APPINFO_MAINTASKID" parameterTypeRef="APPINFO_MAINTASKID_Type" />
+			<Parameter name="APPINFO_EXECUTIONCOUNTER" parameterTypeRef="APPINFO_EXECUTIONCOUNTER_Type" />
+			<Parameter name="APPINFO_MAINTASKNAME" parameterTypeRef="APPINFO_MAINTASKNAME_Type" />
+			<Parameter name="APPINFO_NUMOFCHILDTASKS" parameterTypeRef="APPINFO_NUMOFCHILDTASKS_Type" />
+			<Parameter name="POOLHANDLE" parameterTypeRef="POOLHANDLE_Type" />
+			<Parameter name="POOLSTATS_POOLSIZE" parameterTypeRef="POOLSTATS_POOLSIZE_Type" />
+			<Parameter name="POOLSTATS_NUMBLOCKSREQUESTED" parameterTypeRef="POOLSTATS_NUMBLOCKSREQUESTED_Type" />
+			<Parameter name="POOLSTATS_CHECKERRCTR" parameterTypeRef="POOLSTATS_CHECKERRCTR_Type" />
+			<Parameter name="POOLSTATS_NUMFREEBYTES" parameterTypeRef="POOLSTATS_NUMFREEBYTES_Type" />
+
+			<!-- SAMPLE Telemetry Definitions -->
+			<Parameter name="DEVICE_COUNTER" parameterTypeRef="DEVICE_COUNTER_Type"/>
+			<Parameter name="RAW_SAMPLE_X" parameterTypeRef="RAW_SAMPLE_X_Type"/>
+			<Parameter name="RAW_SAMPLE_Y" parameterTypeRef="RAW_SAMPLE_Y_Type"/>
+			<Parameter name="RAW_SAMPLE_Z" parameterTypeRef="RAW_SAMPLE_Z_Type"/>
+
 		</ParameterSet>
 		<ContainerSet>
 			<SequenceContainer abstract="true" name="CCSDSPacket">
@@ -151,67 +557,33 @@
 					</RestrictionCriteria>
 				</BaseContainer>
 			</SequenceContainer>
-			<SequenceContainer name="Spacecraft">
+			
+
+			<!-- SAMPLE Container Set  -->
+			<SequenceContainer name="SAMPLE">
 				<EntryList>
-					<ParameterRefEntry parameterRef="EpochUSNO" />
-					<ParameterRefEntry parameterRef="OrbitNumberCumulative" />
-					<ParameterRefEntry parameterRef="ElapsedSeconds" />
-					<ParameterRefEntry parameterRef="A" />
-					<ParameterRefEntry parameterRef="Height" />
-					<ParameterRefEntry parameterRef="Position" />
-					<ParameterRefEntry parameterRef="Velocity" />
-					<ParameterRefEntry parameterRef="Latitude" />
-					<ParameterRefEntry parameterRef="Longitude" />
-					<ParameterRefEntry parameterRef="Battery1_Voltage" />
-					<ParameterRefEntry parameterRef="Battery2_Voltage" />
-					<ParameterRefEntry parameterRef="Battery1_Temp" />
-					<ParameterRefEntry parameterRef="Battery2_Temp" />
-					<ParameterRefEntry parameterRef="Magnetometer" />
-					<ParameterRefEntry parameterRef="Sunsensor" />
-					<ParameterRefEntry parameterRef="Gyro" />
-					<ParameterRefEntry parameterRef="Detector_Temp" />
-					<ParameterRefEntry parameterRef="Shadow" />
-					<ParameterRefEntry parameterRef="Contact_Golbasi_GS" />
-					<ParameterRefEntry parameterRef="Contact_Svalbard" />
-					<ParameterRefEntry parameterRef="Payload_Status" />
-					<ParameterRefEntry parameterRef="Payload_Error_Flag" />
-					<ParameterRefEntry parameterRef="ADCS_Error_Flag" />
-					<ParameterRefEntry parameterRef="CDHS_Error_Flag" />
-					<ParameterRefEntry parameterRef="COMMS_Error_Flag" />
-					<ParameterRefEntry parameterRef="EPS_Error_Flag" />
-					<ParameterRefEntry parameterRef="COMMS_Status" />
-					<ParameterRefEntry parameterRef="CDHS_Status" />
-					<ParameterRefEntry parameterRef="Mode_Night" />
-					<ParameterRefEntry parameterRef="Mode_Day" />
-					<ParameterRefEntry parameterRef="Mode_Payload" />
-					<ParameterRefEntry parameterRef="Mode_XBand" />
-					<ParameterRefEntry parameterRef="Mode_SBand" />
-					<ParameterRefEntry parameterRef="Mode_Safe" />
-					<ParameterRefEntry parameterRef="Enum_Para_1">
-						<LocationInContainerInBits referenceLocation="containerStart">
-							<FixedValue>29</FixedValue>
-						</LocationInContainerInBits>
-					</ParameterRefEntry>
-					<ParameterRefEntry parameterRef="Enum_Para_2">
-						<LocationInContainerInBits referenceLocation="containerStart">
-							<FixedValue>27</FixedValue>
-						</LocationInContainerInBits>
-					</ParameterRefEntry>
-					<ParameterRefEntry parameterRef="Enum_Para_3">
-						<LocationInContainerInBits referenceLocation="containerStart">
-							<FixedValue>25</FixedValue>
-						</LocationInContainerInBits>
-					</ParameterRefEntry>
+					<!-- <ParameterRefEntry parameterRef="CCSDS_STREAMID"/>
+					<ParameterRefEntry parameterRef="CCSDS_SEQUENCE"/>
+					<ParameterRefEntry parameterRef="CCSDS_LENGTH"/> -->
+					<ParameterRefEntry parameterRef="CCSDS_SECONDS"/>
+					<ParameterRefEntry parameterRef="CCSDS_SUBSECS"/> 
+					<ParameterRefEntry parameterRef="CCSDS_SPARE"/>
+					<ParameterRefEntry parameterRef="DEVICE_COUNTER"/>
+					<ParameterRefEntry parameterRef="RAW_SAMPLE_X"/>
+					<ParameterRefEntry parameterRef="RAW_SAMPLE_Y"/>
+					<ParameterRefEntry parameterRef="RAW_SAMPLE_Z"/>
 				</EntryList>
 				<BaseContainer containerRef="TelemetryPacket">
 					<RestrictionCriteria>
 						<ComparisonList>
-							<Comparison value="NotPresent" parameterRef="CCSDS_Packet_ID/SecHdrFlag" />
-							<Comparison value="100" parameterRef="CCSDS_Packet_ID/APID" />
+							<Comparison value="Present" parameterRef="CCSDS_Packet_ID/SecHdrFlag" />
+							<Comparison value="251" parameterRef="CCSDS_Packet_ID/APID" />
 						</ComparisonList>
 					</RestrictionCriteria>
 				</BaseContainer>
+
 			</SequenceContainer>
+
 		</ContainerSet>
 		<AlgorithmSet>
 			<CustomAlgorithm name="copySunsensor">
@@ -260,13 +632,179 @@
 				<UnitSet />
 				<IntegerDataEncoding sizeInBits="16" />
 			</IntegerArgumentType>
-			<IntegerArgumentType name="Battery_Type" signed="false">
+			<IntegerArgumentType name="MAX_PR_Count" signed="false">
 				<UnitSet />
 				<IntegerDataEncoding encoding="unsigned" sizeInBits="16" />
 				<ValidRangeSet>
-					<ValidRange minInclusive="1" maxInclusive="3" />
+					<ValidRange minInclusive="1" maxInclusive="50" />
 				</ValidRangeSet>
 			</IntegerArgumentType>
+
+			<!-- CFS Argument Definitions -->
+			<IntegerArgumentType name="CCSDS_STREAMID" signed="false">
+				<IntegerDataEncoding sizeInBits="16" minInclusive="MIN_UINT16" maxInclusive="MAX_UINT16"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="CCSDS_SEQUENCE" signed="false">
+				<IntegerDataEncoding sizeInBits="16" minInclusive="MIN_UINT16" maxInclusive="MAX_UINT16"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="CCSDS_LENGTH" signed="false">
+				<IntegerDataEncoding sizeInBits="16" minInclusive="MIN_UINT16" maxInclusive="MAX_UINT16"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="CCSDS_FC" signed="false">
+				<IntegerDataEncoding sizeInBits="8" minInclusive="MIN_UINT8" maxInclusive="MAX_UINT8"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="CCSDS_CHECKSUM" signed="false">
+				<IntegerDataEncoding sizeInBits="8" minInclusive="MIN_UINT8" maxInclusive="MAX_UINT8"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="DEVICE_CONFIG" signed="false">
+				<IntegerDataEncoding sizeInBits="32"/>
+			</IntegerArgumentType>
+			<StringArgumentType name="CDSNAME">
+				<StringDataEncoding encoding="UTF-8">
+				<SizeInBits>
+					<Fixed>
+					<FixedValue>304</FixedValue>
+					</Fixed>
+					<TerminationChar>00</TerminationChar>
+				</SizeInBits>
+				</StringDataEncoding>
+			</StringArgumentType>
+			<StringArgumentType name="DUMPFILENAME">
+				<StringDataEncoding encoding="UTF-8">
+				<SizeInBits>
+					<Fixed>
+					<FixedValue>512</FixedValue>
+					</Fixed>
+					<TerminationChar>00</TerminationChar>
+				</SizeInBits>
+				</StringDataEncoding>
+			</StringArgumentType>
+			<IntegerArgumentType name="MODE" signed="false">
+				<IntegerDataEncoding sizeInBits="32" minInclusive="MIN_UINT32" maxInclusive="MAX_UINT32"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="FILTERMASKNUM" signed="false">
+				<IntegerDataEncoding sizeInBits="32" minInclusive="MIN_UINT32" maxInclusive="MAX_UINT32"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="FILTERMASK" signed="false">
+				<IntegerDataEncoding sizeInBits="32" minInclusive="MIN_UINT32" maxInclusive="MAX_UINT32"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="TRIGGERMASKNUM" signed="false">
+				<IntegerDataEncoding sizeInBits="32" minInclusive="MIN_UINT32" maxInclusive="MAX_UINT32"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="TRIGGERMASK" signed="false">
+				<IntegerDataEncoding sizeInBits="32" minInclusive="MIN_UINT32" maxInclusive="MAX_UINT32"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="TRIGGERMODE" signed="false">
+				<IntegerDataEncoding sizeInBits="32" minInclusive="MIN_UINT32" maxInclusive="MAX_UINT32"/>
+			</IntegerArgumentType>
+			<StringArgumentType name="DATAFILENAME">
+				<StringDataEncoding encoding="UTF-8">
+				<SizeInBits>
+					<Fixed>
+					<FixedValue>512</FixedValue>
+					</Fixed>
+					<TerminationChar>00</TerminationChar>
+				</SizeInBits>
+				</StringDataEncoding>
+			</StringArgumentType>
+			<StringArgumentType name="QUERYALLFILENAME">
+				<StringDataEncoding encoding="UTF-8">
+					<SizeInBits>
+						<Fixed>
+							<FixedValue>512</FixedValue>
+						</Fixed>						
+						<TerminationChar>00</TerminationChar>
+					</SizeInBits>
+				</StringDataEncoding>
+			</StringArgumentType>				
+			<StringArgumentType name="APPLICATION">
+				<StringDataEncoding encoding="UTF-8">
+				<SizeInBits>
+					<Fixed>
+					<FixedValue>160</FixedValue>
+					</Fixed>
+					<TerminationChar>00</TerminationChar>
+				</SizeInBits>
+				</StringDataEncoding>
+			</StringArgumentType>
+			<StringArgumentType name="APPFILENAME">
+				<StringDataEncoding encoding="UTF-8">
+				<SizeInBits>
+					<Fixed>
+					<FixedValue>512</FixedValue>
+					</Fixed>
+					<TerminationChar>00</TerminationChar>
+				</SizeInBits>
+				</StringDataEncoding>
+			</StringArgumentType>
+			<IntegerArgumentType name="RESTARTTYPE" signed="false">
+				<IntegerDataEncoding sizeInBits="16" minInclusive="MIN_UINT16" maxInclusive="MAX_UINT16"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="POOLHANDLE" signed="false">
+				<IntegerDataEncoding sizeInBits="32" minInclusive="MIN_UINT32" maxInclusive="MAX_UINT32"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="MAXPRCOUNT" signed="false">
+				<IntegerDataEncoding sizeInBits="16" minInclusive="MIN_UINT16" maxInclusive="MAX_UINT16"/>
+			</IntegerArgumentType>
+			<StringArgumentType name="CMDSTRING">
+				<StringDataEncoding encoding="UTF-8">
+				<SizeInBits>
+					<Fixed>
+					<FixedValue>512</FixedValue>
+					</Fixed>
+					<TerminationChar>00</TerminationChar>
+				</SizeInBits>
+				</StringDataEncoding>
+			</StringArgumentType>
+			<StringArgumentType name="OUTPUTFILENAME">
+				<StringDataEncoding encoding="UTF-8">
+				<SizeInBits>
+					<Fixed>
+					<FixedValue>512</FixedValue>
+					</Fixed>
+					<TerminationChar>00</TerminationChar>
+				</SizeInBits>
+				</StringDataEncoding>
+			</StringArgumentType>
+			<StringArgumentType name="APPENTRYPOINT">
+				<StringDataEncoding encoding="UTF-8">
+				<SizeInBits>
+					<Fixed>
+					<FixedValue>160</FixedValue>
+					</Fixed>
+					<TerminationChar>00</TerminationChar>
+				</SizeInBits>
+				</StringDataEncoding>
+			</StringArgumentType>
+			<IntegerArgumentType name="STACKSIZE" signed="false">
+				<IntegerDataEncoding sizeInBits="32" minInclusive="MIN_UINT32" maxInclusive="MAX_UINT32"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="EXCEPTIONACTION" signed="false">
+				<IntegerDataEncoding sizeInBits="16" minInclusive="MIN_UINT16" maxInclusive="MAX_UINT16"/>
+			</IntegerArgumentType>
+			<IntegerArgumentType name="PRIORITY" signed="false">
+				<IntegerDataEncoding sizeInBits="16" minInclusive="MIN_UINT16" maxInclusive="MAX_UINT16"/>
+			</IntegerArgumentType>
+			<StringArgumentType name="ERLOGFILENAME">
+				<StringDataEncoding encoding="UTF-8">
+				<SizeInBits>
+					<Fixed>
+					<FixedValue>512</FixedValue>
+					</Fixed>
+					<TerminationChar>00</TerminationChar>
+				</SizeInBits>
+				</StringDataEncoding>
+			</StringArgumentType>
+			<StringArgumentType name="SYSLOGFILENAME">
+				<StringDataEncoding encoding="UTF-8">
+				<SizeInBits>
+					<Fixed>
+					<FixedValue>512</FixedValue>
+					</Fixed>
+					<TerminationChar>00</TerminationChar>
+				</SizeInBits>
+				</StringDataEncoding>
+			</StringArgumentType>
 		</ArgumentTypeSet>
 		<MetaCommandSet>
 			<MetaCommand name="CCSDSPacket" abstract="true">
@@ -296,8 +834,8 @@
 					<ArgumentAssignmentList>
 						<ArgumentAssignment argumentName="CCSDS_Version" argumentValue="0" />
 						<ArgumentAssignment argumentName="CCSDS_Type" argumentValue="TC" />
-						<ArgumentAssignment argumentName="CCSDS_Sec_Hdr_Flag" argumentValue="NotPresent" />
-						<ArgumentAssignment argumentName="CCSDS_APID" argumentValue="101" />
+						<ArgumentAssignment argumentName="CCSDS_Sec_Hdr_Flag" argumentValue="Present" />
+						<ArgumentAssignment argumentName="CCSDS_APID" argumentValue="06" />
 						<ArgumentAssignment argumentName="CCSDS_Group_Flags" argumentValue="Standalone" />
 					</ArgumentAssignmentList>
 				</BaseMetaCommand>
@@ -311,50 +849,710 @@
 					<BaseContainer containerRef="CCSDSPacket" />
 				</CommandContainer>
 			</MetaCommand>
-			<MetaCommand name="Reboot">
-				<BaseMetaCommand metaCommandRef="nos3Packet">
-					<ArgumentAssignmentList>
-						<ArgumentAssignment argumentName="Packet_ID" argumentValue="1" />
-					</ArgumentAssignmentList>
-				</BaseMetaCommand>
-				<CommandContainer name="Reboot">
-					<EntryList />
-					<BaseContainer containerRef="nos3Packet" />
-				</CommandContainer>
-				<DefaultSignificance consequenceLevel="vital" />
-			</MetaCommand>
-			<MetaCommand name="SwitchVoltageOn" shortDescription="Switches a battery on">
-				<BaseMetaCommand metaCommandRef="nos3Packet">
-					<ArgumentAssignmentList>
-						<ArgumentAssignment argumentName="Packet_ID" argumentValue="2" />
-					</ArgumentAssignmentList>
-				</BaseMetaCommand>
+
+<!--  CFS ES Command List-->
+			<MetaCommand name="CFE_CFE_ES_CLEAR_ERLOG">
 				<ArgumentList>
-					<Argument argumentTypeRef="Battery_Type" name="Battery" shortDescription="Number of the battery" />
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="12"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
 				</ArgumentList>
-				<CommandContainer name="SwitchVoltageOn">
+				<CommandContainer name="CFE_CFE_ES_CLEAR_ERLOG">
+					<Description>Autogenerated command for CFE_CFE_ES_CLEAR_ERLOG.</Description>
 					<EntryList>
-						<ArgumentRefEntry argumentRef="Battery" />
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
 					</EntryList>
-					<BaseContainer containerRef="nos3Packet" />
 				</CommandContainer>
 			</MetaCommand>
-			<MetaCommand name="SwitchVoltageOff" shortDescription="Switches a battery off">
-				<BaseMetaCommand metaCommandRef="nos3Packet">
-					<ArgumentAssignmentList>
-						<ArgumentAssignment argumentName="Packet_ID" argumentValue="3" />
-					</ArgumentAssignmentList>
-				</BaseMetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_CLEAR_SYSLOG">
 				<ArgumentList>
-					<Argument argumentTypeRef="Battery_Type" name="Battery" shortDescription="Number of the battery" />
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="10"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
 				</ArgumentList>
-				<CommandContainer name="SwitchVoltageOff">
+				<CommandContainer name="CFE_CFE_ES_CLEAR_SYSLOG">
+					<Description>Autogenerated command for CFE_CFE_ES_CLEAR_SYSLOG.</Description>
 					<EntryList>
-						<ArgumentRefEntry argumentRef="Battery" />
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
 					</EntryList>
-					<BaseContainer containerRef="nos3Packet" />
 				</CommandContainer>
 			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_DELETE_CDS">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="39"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="21"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="CDSNAME" name="CDSNAME" initialValue="default"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_DELETE_CDS">
+					<Description>Autogenerated command for CFE_CFE_ES_DELETE_CDS.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="CDSNAME"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_DUMP_CDS_REG">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="65"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="23"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="DUMPFILENAME" name="DUMPFILENAME" initialValue="default"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_DUMP_CDS_REG">
+					<Description>Autogenerated command for CFE_CFE_ES_DUMP_CDS_REG.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="DUMPFILENAME"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_NOOP">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="0"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_NOOP">
+					<Description>Autogenerated command for CFE_CFE_ES_NOOP.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_OVERWRITE_SYSLOG">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="5"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="18"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="MODE" name="MODE" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_OVERWRITE_SYSLOG">
+					<Description>Autogenerated command for CFE_CFE_ES_OVERWRITE_SYSLOG.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="MODE"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_PERF_SETFILTERMASK">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="9"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="16"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="FILTERMASKNUM" name="FILTERMASKNUM" initialValue="0"/>
+					<Argument argumentTypeRef="FILTERMASK" name="FILTERMASK" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_PERF_SETFILTERMASK">
+					<Description>Autogenerated command for CFE_CFE_ES_PERF_SETFILTERMASK.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="FILTERMASKNUM"/>
+						<ArgumentRefEntry argumentRef="FILTERMASK"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_PERF_SETTRIGMASK">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="9"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="17"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="TRIGGERMASKNUM" name="TRIGGERMASKNUM" initialValue="0"/>
+					<Argument argumentTypeRef="TRIGGERMASK" name="TRIGGERMASK" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_PERF_SETTRIGMASK">
+					<Description>Autogenerated command for CFE_CFE_ES_PERF_SETTRIGMASK.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="TRIGGERMASKNUM"/>
+						<ArgumentRefEntry argumentRef="TRIGGERMASK"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_PERF_STARTDATA">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="5"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="14"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="TRIGGERMODE" name="TRIGGERMODE" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_PERF_STARTDATA">
+					<Description>Autogenerated command for CFE_CFE_ES_PERF_STARTDATA.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="TRIGGERMODE"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_PERF_STOPDATA">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="65"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="15"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="DATAFILENAME" name="DATAFILENAME" initialValue="default"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_PERF_STOPDATA">
+					<Description>Autogenerated command for CFE_CFE_ES_PERF_STOPDATA.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="DATAFILENAME"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_QUERY_ALL">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="65"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="9"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="QUERYALLFILENAME" name="QUERYALLFILENAME" initialValue="text"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_QUERY_ALL">
+					<Description>Autogenerated command for CFE_CFE_ES_QUERY_ALL.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="QUERYALLFILENAME"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_QUERY_ALL_TASKS">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="65"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="24"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="QUERYALLFILENAME" name="QUERYALLFILENAME" initialValue="default"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_QUERY_ALL_TASKS">
+					<Description>Autogenerated command for CFE_CFE_ES_QUERY_ALL_TASKS.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="QUERYALLFILENAME"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_QUERY_ONE">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="21"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="8"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="APPLICATION" name="APPLICATION" initialValue="default"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_QUERY_ONE">
+					<Description>Autogenerated command for CFE_CFE_ES_QUERY_ONE.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="APPLICATION"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_RELOAD_APP">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="85"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="7"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="APPLICATION" name="APPLICATION" initialValue="default"/>
+					<Argument argumentTypeRef="APPFILENAME" name="APPFILENAME" initialValue="default"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_RELOAD_APP">
+					<Description>Autogenerated command for CFE_CFE_ES_RELOAD_APP.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="APPLICATION"/>
+						<ArgumentRefEntry argumentRef="APPFILENAME"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_RESET">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_RESET">
+					<Description>Autogenerated command for CFE_CFE_ES_RESET.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_RESET_PR_COUNT">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="19"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_RESET_PR_COUNT">
+					<Description>Autogenerated command for CFE_CFE_ES_RESET_PR_COUNT.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_RESTART_APP">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="21"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="6"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="APPLICATION" name="APPLICATION" initialValue="default"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_RESTART_APP">
+					<Description>Autogenerated command for CFE_CFE_ES_RESTART_APP.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="APPLICATION"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_RESTART">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="3"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="2"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="RESTARTTYPE" name="RESTARTTYPE" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_RESTART">
+					<Description>Autogenerated command for CFE_CFE_ES_RESTART.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="RESTARTTYPE"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_SEND_MEM_POOL_STATS">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="25"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="22"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="APPLICATION" name="APPLICATION" initialValue="0"/>
+					<Argument argumentTypeRef="POOLHANDLE" name="POOLHANDLE" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_SEND_MEM_POOL_STATS">
+					<Description>Autogenerated command for CFE_CFE_ES_SEND_MEM_POOL_STATS.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="APPLICATION"/>
+						<ArgumentRefEntry argumentRef="POOLHANDLE"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_SET_MAX_PR_COUNT">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="3"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="20"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="MAXPRCOUNT" name="MAXPRCOUNT" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_SET_MAX_PR_COUNT">
+					<Description>Autogenerated command for CFE_CFE_ES_SET_MAX_PR_COUNT.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="MAXPRCOUNT"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_SHELL_CMD">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="129"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="3"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="CMDSTRING" name="CMDSTRING" initialValue="default"/>
+					<Argument argumentTypeRef="OUTPUTFILENAME" name="OUTPUTFILENAME" initialValue="default"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_SHELL_CMD">
+					<Description>Autogenerated command for CFE_CFE_ES_SHELL_CMD.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="CMDSTRING"/>
+						<ArgumentRefEntry argumentRef="OUTPUTFILENAME"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_START_APP">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="113"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="4"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="APPLICATION" name="APPLICATION" initialValue="default"/>
+					<Argument argumentTypeRef="APPENTRYPOINT" name="APPENTRYPOINT" initialValue="default"/>
+					<Argument argumentTypeRef="APPFILENAME" name="APPFILENAME" initialValue="default"/>
+					<Argument argumentTypeRef="STACKSIZE" name="STACKSIZE" initialValue="0"/>
+					<Argument argumentTypeRef="EXCEPTIONACTION" name="EXCEPTIONACTION" initialValue="0"/>
+					<Argument argumentTypeRef="PRIORITY" name="PRIORITY" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_START_APP">
+					<Description>Autogenerated command for CFE_CFE_ES_START_APP.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="APPLICATION"/>
+						<ArgumentRefEntry argumentRef="APPENTRYPOINT"/>
+						<ArgumentRefEntry argumentRef="APPFILENAME"/>
+						<ArgumentRefEntry argumentRef="STACKSIZE"/>
+						<ArgumentRefEntry argumentRef="EXCEPTIONACTION"/>
+						<ArgumentRefEntry argumentRef="PRIORITY"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_STOP_APP">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="21"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="5"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="APPLICATION" name="APPLICATION" initialValue="default"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_STOP_APP">
+					<Description>Autogenerated command for CFE_CFE_ES_STOP_APP.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="APPLICATION"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_WRITE_ERLOG">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="65"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="13"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="ERLOGFILENAME" name="ERLOGFILENAME" initialValue="default"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_WRITE_ERLOG">
+					<Description>Autogenerated command for CFE_CFE_ES_WRITE_ERLOG.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="ERLOGFILENAME"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="CFE_CFE_ES_WRITE_SYSLOG">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x1806"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="65"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="11"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="SYSLOGFILENAME" name="SYSLOGFILENAME" initialValue="default"/>
+				</ArgumentList>
+				<CommandContainer name="CFE_CFE_ES_WRITE_SYSLOG">
+					<Description>Autogenerated command for CFE_CFE_ES_WRITE_SYSLOG.</Description>
+					<EntryList>
+						<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+						<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+						<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+						<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+						<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+						<ArgumentRefEntry argumentRef="SYSLOGFILENAME"/>
+					</EntryList>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="SAMPLE_NOOP_CC">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x18FA"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="0"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="SAMPLE_NOOP_CC">
+					<EntryList>
+					<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+					<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+					<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+					<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+					<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+					</EntryList>
+					<Description>Autogenerated command for SAMPLE_NOOP_CC.</Description>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="SAMPLE_RST_COUNTERS_CC">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x18FA"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="SAMPLE_RST_COUNTERS_CC">
+					<EntryList>
+					<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+					<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+					<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+					<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+					<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+					</EntryList>
+					<Description>Autogenerated command for SAMPLE_RST_COUNTERS_CC.</Description>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="SAMPLE_ENABLE_CC">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x18FA"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="2"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="SAMPLE_ENABLE_CC">
+					<EntryList>
+					<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+					<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+					<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+					<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+					<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+					</EntryList>
+					<Description>Autogenerated command for SAMPLE_ENABLE_CC.</Description>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="SAMPLE_DISABLE_CC">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x18FA"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="3"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="SAMPLE_DISABLE_CC">
+					<EntryList>
+					<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+					<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+					<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+					<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+					<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+					</EntryList>
+					<Description>Autogenerated command for SAMPLE_DISABLE_CC.</Description>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="SAMPLE_CONFIG_CC">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x18FA"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="5"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="4"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+					<Argument argumentTypeRef="DEVICE_CONFIG" name="DEVICE_CONFIG" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="SAMPLE_CONFIG_CC">
+					<EntryList>
+					<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+					<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+					<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+					<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+					<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+					<ArgumentRefEntry argumentRef="DEVICE_CONFIG"/>
+					</EntryList>
+					<Description>Autogenerated command for SAMPLE_CONFIG_CC.</Description>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="SAMPLE_REQ_HK">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x18FB"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="0"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="SAMPLE_REQ_HK">
+					<EntryList>
+					<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+					<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+					<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+					<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+					<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+					</EntryList>
+					<Description>Autogenerated command for SAMPLE_REQ_HK.</Description>
+				</CommandContainer>
+			</MetaCommand>
+
+			<MetaCommand name="SAMPLE_REQ_DATA">
+				<ArgumentList>
+					<Argument argumentTypeRef="CCSDS_STREAMID" name="CCSDS_STREAMID" initialValue="0x18FB"/>
+					<Argument argumentTypeRef="CCSDS_SEQUENCE" name="CCSDS_SEQUENCE" initialValue="0xC000"/>
+					<Argument argumentTypeRef="CCSDS_LENGTH" name="CCSDS_LENGTH" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_FC" name="CCSDS_FC" initialValue="1"/>
+					<Argument argumentTypeRef="CCSDS_CHECKSUM" name="CCSDS_CHECKSUM" initialValue="0"/>
+				</ArgumentList>
+				<CommandContainer name="SAMPLE_REQ_DATA">
+					<EntryList>
+					<ArgumentRefEntry argumentRef="CCSDS_STREAMID"/>
+					<ArgumentRefEntry argumentRef="CCSDS_SEQUENCE"/>
+					<ArgumentRefEntry argumentRef="CCSDS_LENGTH"/>
+					<ArgumentRefEntry argumentRef="CCSDS_FC"/>
+					<ArgumentRefEntry argumentRef="CCSDS_CHECKSUM"/>
+					</EntryList>
+					<Description>Autogenerated command for SAMPLE_REQ_DATA.</Description>
+				</CommandContainer>
+			</MetaCommand>		
+
 		</MetaCommandSet>
 	</CommandMetaData>
 </SpaceSystem>

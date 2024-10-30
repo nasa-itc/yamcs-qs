@@ -1,0 +1,19 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Set the root logging level -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <!-- Enable DEBUG logging for telemetry and preprocessing -->
+    <logger name="org.yamcs.tctm" level="DEBUG" />
+    <logger name="org.yamcs.tctm.UdpTmDataLink" level="DEBUG" />
+    <logger name="org.yamcs.tctm.PacketPreprocessor" level="DEBUG" />
+    <logger name="org.yamcs.archive.XtceTmRecorder" level="DEBUG" />
+    <logger name="org.yamcs.parameterarchive" level="DEBUG" />
+</configuration>
